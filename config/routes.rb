@@ -1,9 +1,9 @@
 Cloud9Test3::Application.routes.draw do
-  get "welcome/index"
+  resources :posts
 
-  get "welcome/about"
-  
-  root to: 'welcome#index'
+  match "about" => 'welcome#about', via: :get
+
+  root :to => 'welcome#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
